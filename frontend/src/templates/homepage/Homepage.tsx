@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Sitemark from './components/logo';
 import "./style.css"; // custom styles
 import Education from "./components/Education";
+import Projects from "./components/Projects";
 
 export default function MarketingPage(props: { disableCustomTheme?: boolean }) {
   return (
@@ -15,6 +16,7 @@ export default function MarketingPage(props: { disableCustomTheme?: boolean }) {
       <AppAppBar />
       <Hero />
       <div>
+        <Projects />
         <Education />
         <Footer />
       </div>
