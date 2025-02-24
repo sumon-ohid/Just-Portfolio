@@ -1,6 +1,6 @@
 This favicon was generated using the following font:
 
-- Font Title: Mogra
+- Font Title: Modak
 - Font Author: undefined
-- Font Source: https://fonts.gstatic.com/s/mogra/v21/f0X40eSs8c95TBo4DvLmxtnG.ttf
+- Font Source: https://fonts.gstatic.com/s/modak/v20/EJRYQgs1XtIEsnMH8BVZ76KU.ttf
 - Font License: undefined)
