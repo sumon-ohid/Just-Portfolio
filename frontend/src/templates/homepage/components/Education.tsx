@@ -70,7 +70,7 @@ export default function Education() {
           component="img"
           src={fourtytwo}
           alt="42 Vienna Coding School"
-          sx={{ width: 100, height: 100, borderRadius: 10, mt: 2 }}
+          sx={{ width: 100, height: 100, borderRadius: 1, mt: 2 }}
         /> */}
         <Box
             component="img"
@@ -178,7 +178,7 @@ export default function Education() {
                 justifyContent: "center",
                 border: 1,
                 borderColor: "divider",
-                borderRadius: 10,
+                borderRadius: 1,
                 mt: 1,
                 flexDirection: "row",
                 height: 50,
@@ -194,7 +194,7 @@ export default function Education() {
                 justifyContent: "center",
                 border: 1,
                 borderColor: "divider",
-                borderRadius: 10,
+                borderRadius: 1,
                 mt: 1,
                 flexDirection: "row",
                 height: 50,
@@ -210,7 +210,7 @@ export default function Education() {
                 justifyContent: "center",
                 border: 1,
                 borderColor: "divider",
-                borderRadius: 10,
+                borderRadius: 1,
                 mt: 1,
                 flexDirection: "row",
                 height: 50,
@@ -226,7 +226,7 @@ export default function Education() {
                 justifyContent: "center",
                 border: 1,
                 borderColor: "divider",
-                borderRadius: 10,
+                borderRadius: 1,
                 mt: 1,
                 flexDirection: "row",
                 height: 50,
@@ -244,7 +244,7 @@ export default function Education() {
                 justifyContent: "center",
                 border: 1,
                 borderColor: "divider",
-                borderRadius: 10,
+                borderRadius: 1,
                 mt: 1,
                 flexDirection: "row",
                 height: 50,
@@ -260,7 +260,7 @@ export default function Education() {
                 justifyContent: "center",
                 border: 1,
                 borderColor: "divider",
-                borderRadius: 10,
+                borderRadius: 1,
                 mt: 1,
                 flexDirection: "row",
                 height: 50,
@@ -277,12 +277,12 @@ export default function Education() {
                 justifyContent: "center",
                 border: 1,
                 borderColor: "divider",
-                borderRadius: 10,
+                borderRadius: 1,
                 mt: 1,
                 flexDirection: "row",
                 height: 50,
                 width: 50,
-                p: 1,
+                p: .5,
             }}
             />
         </Stack>

@@ -78,7 +78,7 @@ export default function Projects() {
             component="img"
             src="https://replai.tech/assets/logo_light-CNUfdC-4.png"
             alt="42 Vienna Coding School"
-            sx={{ width: 150, height: 60, borderRadius: 10, mt: 2, cursor: "pointer" }}
+            sx={{ width: 150, height: 60, borderRadius: 1, mt: 2, cursor: "pointer" }}
             onClick={() => {
               window.open("https://replai.tech/");
             }}
@@ -172,7 +172,7 @@ export default function Projects() {
               justifyContent: "center",
               border: 1,
               borderColor: "divider",
-              borderRadius: 10,
+              borderRadius: 1,
               mt: 1,
               flexDirection: "row",
               height: 50,
@@ -188,7 +188,7 @@ export default function Projects() {
               justifyContent: "center",
               border: 1,
               borderColor: "divider",
-              borderRadius: 10,
+              borderRadius: 1,
               mt: 1,
               flexDirection: "row",
               height: 50,
@@ -204,7 +204,7 @@ export default function Projects() {
               justifyContent: "center",
               border: 1,
               borderColor: "divider",
-              borderRadius: 10,
+              borderRadius: 1,
               mt: 1,
               flexDirection: "row",
               height: 50,
@@ -220,7 +220,7 @@ export default function Projects() {
               justifyContent: "center",
               border: 1,
               borderColor: "divider",
-              borderRadius: 10,
+              borderRadius: 1,
               mt: 1,
               flexDirection: "row",
               height: 50,
@@ -241,6 +241,13 @@ export default function Projects() {
           View Project
         </Button>
       </Card>
+      {/* <Stack spacing={1} direction="row" sx={{ mt: 2 }}>
+        <Card sx={{ width: "100%", maxWidth: 600, mt: 2, p: 1 }} variant="outlined">
+            <Typography variant="h6" align="center">
+              More projects coming soon...
+            </Typography>
+        </Card>
+      </Stack> */}
     </Box>
   );
 }
