@@ -4,6 +4,7 @@ import AppTheme from "../shared-theme/AppTheme";
 import AppAppBar from "./components/AppAppBar";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
+import Sitemark from './components/logo';
 import "./style.css"; // custom styles
 
 export default function MarketingPage(props: { disableCustomTheme?: boolean }) {
