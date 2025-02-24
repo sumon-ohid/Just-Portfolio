@@ -1,0 +1,51 @@
+{
+  "name": "material-ui-vite-ts",
+  "private": true,
+  "version": "5.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
+    "@material-tailwind/react": "^2.1.10",
+    "@mui/icons-material": "^6.4.3",
+    "@mui/joy": "^5.0.0-beta.51",
+    "@mui/lab": "^6.0.0-beta.26",
+    "@mui/material": "^6.4.3",
+    "@mui/system": "^6.4.3",
+    "@mui/x-charts": "^7.26.0",
+    "@mui/x-data-grid": "^7.26.0",
+    "@mui/x-data-grid-pro": "^7.26.0",
+    "@mui/x-date-pickers": "^7.26.0",
+    "@mui/x-date-pickers-pro": "^7.26.0",
+    "@mui/x-tree-view": "^7.26.0",
+    "axios": "^1.7.9",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.7",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "^7.1.5"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.9.36",
+    "@types/node": "^22.13.1",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/react-router-dom": "^5.3.3",
+    "@vitejs/plugin-react": "latest",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
+    "typescript": "latest",
+    "vite": "^6.1.0"
+  },
+  "author": {
+    "name": "Md Ohiduzzaman Sumon",
+    "license": "ISC"
+  }
+}
