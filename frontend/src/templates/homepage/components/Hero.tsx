@@ -164,6 +164,8 @@ export default function Hero() {
               textAlign: "center",
               color: "text.secondary",
               width: { sm: "100%", md: "80%" },
+              fontSize: 15,
+              fontFamily: 'Monospace',
             }}
           >
             I like to build things.
