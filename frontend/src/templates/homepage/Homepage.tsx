@@ -9,7 +9,7 @@ import "./style.css"; // custom styles
 import Education from "./components/Education";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
-import programmer from "../../assets/Programmer-bro.png";
+import programmer from "../../assets/Programmer-rafiki.png";
 import { Box } from "@mui/system";
 
 export function Github() {

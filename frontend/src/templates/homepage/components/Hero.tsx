@@ -168,6 +168,7 @@ export default function Hero() {
               fontFamily: 'Monospace',
             }}
           >
+            {/* later add animation and change sentence */}
             I like to build things.
           </Typography>
           <Stack

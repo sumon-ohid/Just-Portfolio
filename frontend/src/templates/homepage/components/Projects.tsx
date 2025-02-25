@@ -1,53 +1,123 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { Alert, Button, Card, Typography } from "@mui/material";
-import { fontFamily, Stack } from "@mui/system";
+import { flexbox, fontFamily, Stack } from "@mui/system";
 import Grid from "@mui/material/Grid";
 import Replai from "../../../assets/logo.png" 
-
+import Chip from "@mui/material/Chip";
 
 export function ProjectList() {
+  const topProjects = [
+    { 
+      name: "Online Pong Game", 
+      tech: ["Vanilla JavaScript", "Django", "Postgres", "Docker"],
+      description: "Built a full-stack online pong game with Game, Chat, Dashboard, Leaderboard, Settings etc. It's a single page application.",
+      year: 2025
+    },
+    {
+      name: "Web Server",
+      tech: ["C++ Programming language"],
+      description: "Built a Nginx like web server. Supports CGI, Handle thousends of clients at the same time. Takes a Config file as argument.",
+      year: 2024
+    },
+    {
+      name: "Mini Shell",
+      tech: ["C Programming language"],
+      description: "Built a custom Bash like shell. Support Signals, All commands as well as some builtins like echo, cd, export, unset, env, pwd.",
+      year: 2024
+    },
+    {
+      name: "Easy Austria - Mobile and Web app",
+      tech: ["flutterflow", "firebase"],
+      description: "Built a low code app in Flutter. The goal of the app is to help EU citizens moving to Austria. It provides all the guidance.",
+      year: 2024
+    },
+  ];
+
   return (
-<div className="relative group inline-block">
-  <div
-    className="bg-white py-2 rounded-md shadow-lg hover:cursor-pointer flex justify-center items-center gap-4 px-4"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 18 14"
-      height="25"
-      width="25"
-    >
-      <path
-        fill="#FFA000"
-        d="M16.2 1.75H8.1L6.3 0H1.8C0.81 0 0 0.7875 0 1.75V12.25C0 13.2125 0.81 14 1.8 14H15.165L18 9.1875V3.5C18 2.5375 17.19 1.75 16.2 1.75Z"
-      ></path>
-      <path
-        fill="#FFCA28"
-        d="M16.2 2H1.8C0.81 2 0 2.77143 0 3.71429V12.2857C0 13.2286 0.81 14 1.8 14H16.2C17.19 14 18 13.2286 18 12.2857V3.71429C18 2.77143 17.19 2 16.2 2Z"
-      ></path>
-    </svg>
-    <p>Project Structure</p>
-  </div>
+    <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", mb: 4 }}>
+      {/* New Top Projects Section */}
+      <Box sx={{ width: "80%", maxWidth: 1200, mt: 2}}>
+        <Grid container spacing={4} sx={{ mt: 2 }}>
+          {topProjects.map((project, index) => (
+            <Grid item xs={12} md={6} key={index}>
+              <Card sx={{ 
+                p: 3,
+                transition: 'transform 0.3s, box-shadow 0.3s',
+                '&:hover': {
+                  transform: 'translateY(-5px)',
+                  boxShadow: 3
+                }
+              }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                  <Box sx={{
+                    width: 40,
+                    height: 40,
+                    bgcolor: 'primary.main',
+                    color: 'white',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    borderRadius: 1,
+                    mr: 2,
+                    fontWeight: 'bold'
+                  }}>
+                    #{index + 2}
+                  </Box>
+                  <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                    {project.name}
+                  </Typography>
+                </Box>
 
-  <div
-    className="absolute left-0 mt-2 w-64 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
-  >
-    <ul className="p-4 space-y-1">
-      <li className="py-1">📁 src</li>
-      <li className="pl-4 py-1">📁 app</li>
-      <li className="pl-8 py-1">📄 layout.js</li>
-      <li className="pl-8 py-1">📄 page.js</li>
-      <li className="pl-4 py-1">📁 components</li>
-      <li className="pl-8 py-1">📄 header.js</li>
-      <li className="pl-8 py-1">📄 footer.js</li>
-      <li className="pl-4 py-1">📁 styles</li>
-      <li className="pl-8 py-1">📄 globals.css</li>
-    </ul>
-  </div>
-</div>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                  {project.description}
+                </Typography>
 
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                  {project.tech.map((tech, techIndex) => (
+                    <Chip
+                      key={techIndex}
+                      label={tech}
+                      size="small"
+                      sx={{ 
+                        borderRadius: 1,
+                        bgcolor: 'action.selected',
+                        '& .MuiChip-label': { fontSize: '0.75rem' }
+                      }}
+                    />
+                  ))}
+                </Box>
+
+                <Box sx={{ 
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  mt: 2
+                }}>
+                  <Typography variant="caption" color="text.secondary">
+                    {project.year}
+                  </Typography>
+                  <Button 
+                    variant="outlined" 
+                    size="small"
+                    sx={{ 
+                      borderRadius: 2,
+                      textTransform: 'none',
+                      '&:hover': { bgcolor: 'action.hover' }
+                    }}
+                  >
+                    View Code →
+                  </Button>
+                </Box>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+      <Button variant="contained" sx={{ mt: 4, width: '50%', maxWidth: 200}} href="https://github.com/sumon-ohid?tab=repositories">
+          View all projects
+      </Button>
+    </Box>
   );
 }
 
@@ -272,7 +342,7 @@ export default function Projects() {
       {/* <Typography variant="h6" sx={{justifyContent: 'centre', display:"flex", fontSize: 18, alignContent: "center", textAlign: "center", mt: 4 }}>
         Top 10 Projects
       </Typography> */}
-      {/* <ProjectList /> */}
+      <ProjectList />
     </Box>
   );
 }
