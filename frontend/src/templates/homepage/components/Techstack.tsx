@@ -1,9 +1,11 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import profile from "../../../assets/profile.jpg";
 
+
 const Techstack = () => {
-  const isDarkMode = localStorage.getItem("mui-mode") === "dark";
+  const theme = useTheme();
+  const isDarkMode = theme.palette.mode === "dark";
 
   return (
     <Box

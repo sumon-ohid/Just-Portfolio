@@ -103,8 +103,6 @@ export function Social() {
 }
 
 export default function Hero() {
-  const isDarkMode = localStorage.getItem("mui-mode") === "dark";
-
   return (
     <Box
       id="hero"
