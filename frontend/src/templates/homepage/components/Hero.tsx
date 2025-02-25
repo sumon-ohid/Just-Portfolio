@@ -5,6 +5,7 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
 import programmer from "../../../assets/avatar.png";
+import Social from "./Social";
 
 export default function Hero() {
   const isDarkMode = localStorage.getItem("mui-mode") === "dark";
@@ -94,6 +95,7 @@ export default function Hero() {
             }}
           >
           </Stack>
+          <Social />
         </Stack>
       </Container>
     </Box>
