@@ -1,29 +1,10 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { Card, Typography } from "@mui/material";
-import fourtytwolight from "../../../assets/42light.jpg";
-import fourtytwodark from "../../../assets/42dark.jpg";
 import theme from "../../../theme";
 import { Stack } from "@mui/system";
 
 export default function Education() {
-  const [isDarkMode, setIsDarkMode] = React.useState(
-    localStorage.getItem("mui-mode") === "dark"
-  );
-
-  React.useEffect(() => {
-    const handleStorageChange = () => {
-      setIsDarkMode(localStorage.getItem("mui-mode") === "dark");
-    };
-
-    window.addEventListener("storage", handleStorageChange);
-
-    return () => {
-      window.removeEventListener("storage", handleStorageChange);
-    };
-  }, []);
-
-  const fourtytwo = fourtytwodark;
 
   return (
     <Box
