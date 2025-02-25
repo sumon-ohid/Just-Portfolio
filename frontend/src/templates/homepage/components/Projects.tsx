@@ -1,10 +1,10 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { Alert, Button, Card, Typography } from "@mui/material";
-import { flexbox, fontFamily, Stack } from "@mui/system";
+import { Button, Card, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import Replai from "../../../assets/logo.png" 
 import Chip from "@mui/material/Chip";
+import Stack from "@mui/material/Stack";
+import Replai from "../../../assets/logo.png"
 
 export function ProjectList() {
   const topProjects = [
@@ -12,32 +12,35 @@ export function ProjectList() {
       name: "Online Pong Game", 
       tech: ["Vanilla JavaScript", "Django", "Postgres", "Docker"],
       description: "Built a full-stack online pong game with Game, Chat, Dashboard, Leaderboard, Settings etc. It's a single page application.",
-      year: 2025
+      year: 2025,
+      github: "https://github.com/sumon-ohid/42-ft_transcendence"
     },
     {
       name: "Web Server",
       tech: ["C++ Programming language"],
-      description: "Built a Nginx like web server. Supports CGI, Handle thousends of clients at the same time. Takes a Config file as argument.",
-      year: 2024
+      description: "Built a Nginx like web server. Supports CGI, Handle thousands of clients at the same time. Takes a Config file as argument.",
+      year: 2024,
+      github: "https://github.com/sumon-ohid/42-Webserv"
     },
     {
       name: "Mini Shell",
       tech: ["C Programming language"],
       description: "Built a custom Bash like shell. Support Signals, All commands as well as some builtins like echo, cd, export, unset, env, pwd.",
-      year: 2024
+      year: 2024,
+      github: "https://github.com/sumon-ohid/42-minishell"
     },
     {
       name: "Easy Austria - Mobile and Web app",
       tech: ["flutterflow", "firebase"],
       description: "Built a low code app in Flutter. The goal of the app is to help EU citizens moving to Austria. It provides all the guidance.",
-      year: 2024
+      year: 2024,
+      github: "https://github.com/sumon-ohid/Easy-Austria"
     },
   ];
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", mb: 4 }}>
-      {/* New Top Projects Section */}
-      <Box sx={{ width: "80%", maxWidth: 1200, mt: 2}}>
+      <Box sx={{ width: "80%", maxWidth: 1200, mt: 2 }}>
         <Grid container spacing={4} sx={{ mt: 2 }}>
           {topProjects.map((project, index) => (
             <Grid item xs={12} md={6} key={index}>
@@ -62,7 +65,7 @@ export function ProjectList() {
                     mr: 2,
                     fontWeight: 'bold'
                   }}>
-                    #{index + 2}
+                    #{index + 1}
                   </Box>
                   <Typography variant="h6" sx={{ fontWeight: 600 }}>
                     {project.name}
@@ -105,6 +108,8 @@ export function ProjectList() {
                       textTransform: 'none',
                       '&:hover': { bgcolor: 'action.hover' }
                     }}
+                    href={project.github}
+                    target="_blank"
                   >
                     View Code →
                   </Button>
@@ -115,14 +120,13 @@ export function ProjectList() {
         </Grid>
       </Box>
       <Button variant="contained" sx={{ mt: 4, width: '50%', maxWidth: 200}} href="https://github.com/sumon-ohid?tab=repositories">
-          View all projects
+        View all projects
       </Button>
     </Box>
   );
 }
 
 export default function Projects() {
-
   return (
     <Box
       sx={{
@@ -339,9 +343,6 @@ export default function Projects() {
           View Project
         </Button>
       </Card>
-      {/* <Typography variant="h6" sx={{justifyContent: 'centre', display:"flex", fontSize: 18, alignContent: "center", textAlign: "center", mt: 4 }}>
-        Top 10 Projects
-      </Typography> */}
       <ProjectList />
     </Box>
   );
