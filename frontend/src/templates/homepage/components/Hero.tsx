@@ -4,6 +4,7 @@ import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
+import programmer from "../../../assets/avatar.png";
 
 export default function Hero() {
   const isDarkMode = localStorage.getItem("mui-mode") === "dark";
@@ -26,10 +27,11 @@ export default function Hero() {
       <Container
         sx={{
           display: "flex",
-          flexDirection: "column",
+          flexDirection: "row",
           alignItems: "center",
           pt: { xs: 14, sm: 20 },
           pb: { xs: 8, sm: 12 },
+          justifyContent: "center",
         }}
       >
         <Stack
@@ -37,6 +39,12 @@ export default function Hero() {
           useFlexGap
           sx={{ alignItems: "center", width: { xs: "100%", sm: "70%" } }}
         >
+        {/* <Box 
+          component="img"
+          src={programmer}
+          alt="Programmer"
+          sx={{ width: 100, height: 120, borderRadius: 1, display: "block", margin: "auto", justifyContent: "center", alignItems: "center", alignContent: "center" }}
+          /> */}
           <Typography
             variant="h1"
             sx={{

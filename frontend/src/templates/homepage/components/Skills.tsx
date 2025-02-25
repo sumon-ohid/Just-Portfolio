@@ -43,11 +43,12 @@ const Skills = () => {
             direction="row"
             sx={{
               display: "flex",
-              animation: `${moveRightToLeft} 30s linear infinite`,
-              width: "200%",
+              // animation: `${moveRightToLeft} 30s linear infinite`,
+              width: "100%",
+              overflow: "auto",
             }}
           >
-            {[...skills, ...skills].map((skill, index) => (
+            {[...skills].map((skill, index) => (
               <Box key={index} component="img" src={skill.src} alt={skill.alt} sx={{ height: 50, width: 50, border: 1, borderColor: "divider", borderRadius: 1, p: 0.5 }} />
             ))}
           </Stack>
