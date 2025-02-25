@@ -7,6 +7,7 @@ import Container from '@mui/material/Container';
 import ColorModeIconDropdown from '../../shared-theme/ColorModeIconDropdown';
 import Sitemark from './logo';
 import { useNavigate } from 'react-router-dom';
+import Mail from "./Mail"
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: 'flex',
@@ -46,6 +47,13 @@ export default function AppAppBar() {
             <ColorModeIconDropdown size="medium" />
           </Box>
         </StyledToolbar>
+          <Box sx={{
+              display: { xs: 'flex', md: 'flex' },
+              gap: 1,
+              alignItems: 'center', position: 'fixed', bottom: 30, right: 10
+            }}>
+            <Mail />
+          </Box>
       </Container>
     </AppBar>
   );
