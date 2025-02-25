@@ -7,9 +7,9 @@ export default defineConfig(({ mode }) => {
     plugins: [
       react(),
     ],
-    base: mode === 'production' ? 'https://sumon.replai.tech/' : '/',
+    base: '/',
     server: {
-      allowedHosts: ['localhost', 'sumon.replai.tech'],
+      allowedHosts: ['localhost'],
     },
   };
 });
