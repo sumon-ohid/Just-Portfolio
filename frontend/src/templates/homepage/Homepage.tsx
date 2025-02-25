@@ -9,6 +9,8 @@ import "./style.css"; // custom styles
 import Education from "./components/Education";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
+import programmer from "../../assets/Programmer-bro.png";
+import { Box } from "@mui/system";
 
 export default function MarketingPage(props: { disableCustomTheme?: boolean }) {
   return (
@@ -17,6 +19,12 @@ export default function MarketingPage(props: { disableCustomTheme?: boolean }) {
       <AppAppBar />
       <Hero />
       <div>
+        <Box 
+          component="img"
+          src={programmer}
+          alt="Programmer"
+          sx={{ width: 300, height: 300, borderRadius: 1, mt: 2, display: "block", margin: "auto", justifyContent: "center", alignItems: "center", alignContent: "center" }}
+        />
         <Skills />
         <Projects />
         <Education />

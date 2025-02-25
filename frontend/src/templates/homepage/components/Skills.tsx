@@ -27,7 +27,7 @@ const skills = [
 
 const Skills = () => {
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", mb: 4 }}>
+    <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", mb: 4, mt: -6.9 }}>
       <Box sx={{ p: 1, border: 1, borderColor: "divider", borderRadius: 5, textAlign: "center", width: "80%", maxWidth: 500 }}>
         <Typography variant="h6" gutterBottom>Skills & Certifications</Typography>
       </Box>
