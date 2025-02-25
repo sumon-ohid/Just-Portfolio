@@ -18,7 +18,6 @@ const skills = [
   { src: "https://img.icons8.com/?size=100&id=wPohyHO_qO1a&format=png&color=000000", alt: "React" },
   { src: "https://img.icons8.com/?size=100&id=uJM6fQYqDaZK&format=png&color=000000", alt: "TypeScript" },
   { src: "https://img.icons8.com/?size=100&id=hsPbhkOH4FMe&format=png&color=000000", alt: "Node.js" },
-  { src: "https://img.icons8.com/?size=100&id=74402&format=png&color=000000", alt: "MongoDB" },
   { src: "https://img.icons8.com/?size=100&id=fG5Tnj4ARIoI&format=png&color=000000", alt: "Linux" },
   { src: "https://img.icons8.com/?size=100&id=20909&format=png&color=000000", alt: "HTML" },
   { src: "https://img.icons8.com/?size=100&id=7gdY5qNXaKC0&format=png&color=000000", alt: "CSS" },
@@ -53,6 +52,12 @@ const Skills = () => {
             ))}
           </Stack>
         </Box>
+      </Card>
+      <Card sx={{mt: 2}}>
+          <Typography variant="h6" sx={{fontSize: 12}}>
+            Github Foundation Certification
+          </Typography>
+          <img src="https://images.credly.com/size/680x680/images/024d0122-724d-4c5a-bd83-cfe3c4b7a073/image.png" alt="github foundation" height={200} width={200} ></img>
       </Card>
     </Box>
   );
