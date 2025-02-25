@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "react-scroll": "^1.9.3"
-  },
-  "devDependencies": {
-    "@types/react-scroll": "^1.8.10"
-  }
-}
