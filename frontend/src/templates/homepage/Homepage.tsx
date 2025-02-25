@@ -10,6 +10,7 @@ import Education from "./components/Education";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import programmer from "../../assets/Programmer-rafiki.png";
+import Thankyou from "../../assets/Appreciation-bro.png";
 import { Box } from "@mui/system";
 
 export function Github() {
@@ -93,6 +94,22 @@ export default function MarketingPage(props: { disableCustomTheme?: boolean }) {
         <Skills />
         <Projects />
         <Education />
+        <Box
+          component="img"
+          src={Thankyou}
+          alt="thank you"
+          sx={{
+            width: 300,
+            height: 300,
+            borderRadius: 1,
+            mt: 2,
+            display: "block",
+            margin: "auto",
+            justifyContent: "center",
+            alignItems: "center",
+            alignContent: "center",
+          }}
+        />
         <Footer />
       </div>
     </AppTheme>
