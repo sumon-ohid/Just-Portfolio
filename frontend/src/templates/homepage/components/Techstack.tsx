@@ -2,7 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import profile from "../../../assets/profile.jpg";
 
-const Social = () => {
+const Techstack = () => {
   const isDarkMode = localStorage.getItem("mui-mode") === "dark";
 
   return (
@@ -66,4 +66,4 @@ const Social = () => {
   );
 };
 
-export default Social;
+export default Techstack;
