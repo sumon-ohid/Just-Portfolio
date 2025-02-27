@@ -55,7 +55,7 @@ export default function Education() {
         /> */}
         <Box
             component="img"
-            src="https://images.credly.com/size/680x680/images/a6e3d74d-5acb-4519-91ce-70220c9f287b/image.png"
+            src="https://www.42vienna.com/img/42vienna.jpg"
             alt="42badge"
             sx={{
                 display: "flex",
@@ -64,6 +64,9 @@ export default function Education() {
                 flexDirection: "row",
                 height: 120,
                 width: 120,
+                borderRadius: 10,
+                borderColor: "divider",
+                border: 1,
             }}
         />
         <Box
@@ -278,6 +281,7 @@ export default function Education() {
             background: theme.palette.success.main,
             flexDirection: "row",
             p: 1,
+            mb: 4,
           }}
         >
           <Typography

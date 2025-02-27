@@ -163,11 +163,12 @@ export default function Hero() {
               color: "text.secondary",
               width: { sm: "100%", md: "80%" },
               fontSize: 15,
-              fontFamily: 'Monospace',
             }}
           >
             {/* later add animation and change sentence */}
             I like to build things.
+            <br/>
+            I'm open to take new challenges.
           </Typography>
           <Stack
             direction={{ xs: "column", sm: "row" }}
