@@ -8,8 +8,20 @@ import Techstack from "../components/Techstack";
 import "../style.css";
 import { useTheme } from "@mui/material/styles";
 import Card from "@mui/material/Card";
+import { motion } from "framer-motion";
+
 
 export function CvButton() {
+  const roleTexts = ["Developer", "Designer", "Creator"];
+  const [roleIndex, setRoleIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleIndex((prevIndex) => (prevIndex + 1) % roleTexts.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Box sx={{ display: "flex", justifyContent: "center", pt: 2, mt: 2 }}>
       <button className="download-button">
@@ -102,7 +114,21 @@ export function Social() {
   );
 }
 
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
+};
+
 export default function Hero() {
+
+  const theme = useTheme();
+  const isDarkMode = theme.palette.mode === "dark";
+  
   return (
     <Box
       id="hero"
@@ -128,11 +154,41 @@ export default function Hero() {
           justifyContent: "center",
         }}
       >
+        
         <Stack
           spacing={2}
           useFlexGap
           sx={{ alignItems: "center", width: { xs: "100%", sm: "70%" } }}
         >
+          <Box
+          component={motion.div}
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+          }}
+        >
+         
+          {/* Role with animation */}
+          <Box
+            component={motion.div}
+            variants={itemVariants}
+            sx={{
+              height: "2rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              mb: 4,
+              overflow: "hidden",
+            }}
+          >
+          </Box>
+        </Box>
           <Typography
             variant="h1"
             sx={{
@@ -157,6 +213,47 @@ export default function Hero() {
               Sumon
             </Typography>
           </Typography>
+           {/* Small badge at top */}
+           <Box
+            component={motion.div}
+            variants={itemVariants}
+            sx={{
+              px: 2,
+              py: 0.75,
+              borderRadius: 4,
+              background: isDarkMode 
+                ? "rgba(255, 255, 255, 0.05)" 
+                : "rgba(0, 0, 0, 0.03)",
+              border: "1px solid",
+              borderColor: isDarkMode 
+                ? "rgba(255, 255, 255, 0.1)" 
+                : "rgba(0, 0, 0, 0.05)",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 1,
+            }}
+          >
+            <Box
+              sx={{
+                width: 8,
+                height: 8,
+                borderRadius: "50%",
+                backgroundColor: theme.palette.primary.main,
+                boxShadow: `0 0 10px ${theme.palette.primary.main}`,
+              }}
+            />
+            <Typography
+              variant="caption"
+              sx={{
+                fontWeight: 500,
+                color: isDarkMode ? "grey.400" : "grey.700",
+                letterSpacing: "0.05em",
+              }}
+            >
+              AVAILABLE FOR OPPORTUNITIES
+            </Typography>
+          </Box>
+
           <Typography
             sx={{
               textAlign: "center",
