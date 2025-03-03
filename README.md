@@ -1,6 +1,6 @@
 # Portfolio Website
 
-![Portfolio Banner](frontend/src/assets/logo.png)
+![Portfolio Banner](frontend/logo/logo_light.png)
 
 ## Overview
 
