@@ -12,6 +12,8 @@ import Skills from "./components/Skills";
 import programmer from "../../assets/Programmer-rafiki.png";
 import Thankyou from "../../assets/Appreciation-bro.png";
 import { Box } from "@mui/system";
+import Coding from "../../assets/coding.json";
+import Lottie from "react-lottie-player";
 
 export function Github() {
   return (
@@ -75,21 +77,11 @@ export default function MarketingPage(props: { disableCustomTheme?: boolean }) {
       <AppAppBar />
       <Hero />
       <div>
-        <Box
-          component="img"
-          src={programmer}
-          alt="Programmer"
-          sx={{
-            width: 300,
-            height: 300,
-            borderRadius: 1,
-            mt: 2,
-            display: "block",
-            margin: "auto",
-            justifyContent: "center",
-            alignItems: "center",
-            alignContent: "center",
-          }}
+        <Lottie
+          loop
+          animationData={Coding}
+          play
+          style={{ width: 300, height: 300, margin: "auto", display: "block", opacity: 0.8 }}
         />
         <Skills />
         <Projects />
