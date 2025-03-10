@@ -389,7 +389,7 @@ const Skills = () => {
                 variant="outlined"
                 size="small"
                 sx={{ mt: 2, cursor: "pointer" }}
-                onClick={() => window.open("https://www.credly.com", "_blank")}
+                onClick={() => window.open("https://www.credly.com/badges/1b17bc24-0b38-4c1d-aacf-406160d11095/public_url", "_blank")}
               />
             </Box>
           </Card>
