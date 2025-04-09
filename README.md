@@ -14,6 +14,9 @@ A modern, responsive portfolio website showcasing my software development projec
 - **Interactive UI**: Engaging user experience with animations and transitions
 - **Performance Optimized**: Fast loading times and smooth scrolling
 
+## Preview
+<img width="1470" alt="Screenshot 2025-04-09 at 22 27 56" src="https://github.com/user-attachments/assets/cb5990e0-6a86-4daf-a306-eb68872b64d2" />
+
 ## Technologies Used
 
 ### Frontend
