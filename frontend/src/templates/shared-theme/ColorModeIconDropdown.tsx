@@ -3,25 +3,27 @@ import DarkModeIcon from '@mui/icons-material/DarkModeRounded';
 import LightModeIcon from '@mui/icons-material/LightModeRounded';
 import Box from '@mui/material/Box';
 import IconButton, { IconButtonOwnProps } from '@mui/material/IconButton';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import { useColorScheme } from '@mui/material/styles';
+import Tooltip from '@mui/material/Tooltip';
 
 export default function ColorModeIconDropdown(props: IconButtonOwnProps) {
-  const { mode, systemMode, setMode } = useColorScheme();
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
+  const { mode, setMode } = useColorScheme();
+  
+  // Initial setup - if system is detected, convert to either light or dark
+  React.useEffect(() => {
+    if (mode === 'system') {
+      // You can choose which mode to default to when system is detected
+      // For this implementation, we're using dark as default
+      setMode('dark');
+    }
+  }, []);
+
+  // Toggle between light and dark modes on click
+  const handleToggleMode = () => {
+    setMode(mode === 'light' ? 'dark' : 'light');
   };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-  const handleMode = (targetMode: 'system' | 'light' | 'dark') => () => {
-    setMode(targetMode);
-    handleClose();
-  };
-  if (!mode) {
+  
+  if (!mode || mode === 'system') {
     return (
       <Box
         data-screenshot="toggle-mode"
@@ -37,53 +39,26 @@ export default function ColorModeIconDropdown(props: IconButtonOwnProps) {
       />
     );
   }
-  const resolvedMode = (systemMode || mode) as 'light' | 'dark';
-  const icon = {
-    light: <LightModeIcon />,
-    dark: <DarkModeIcon />,
-  }[resolvedMode];
+  
+  const getIcon = () => {
+    return mode === 'light' ? <LightModeIcon /> : <DarkModeIcon />;
+  };
+
+  const getTooltipText = () => {
+    return mode === 'light' ? 'Switch to dark mode' : 'Switch to light mode';
+  };
+  
   return (
-    <React.Fragment>
+    <Tooltip title={getTooltipText()}>
       <IconButton
         data-screenshot="toggle-mode"
-        onClick={handleClick}
-        disableRipple
+        onClick={handleToggleMode}
         size="small"
-        aria-controls={open ? 'color-scheme-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
+        aria-label="toggle color mode"
         {...props}
       >
-        {icon}
+        {getIcon()}
       </IconButton>
-      <Menu
-        anchorEl={anchorEl}
-        id="account-menu"
-        open={open}
-        onClose={handleClose}
-        onClick={handleClose}
-        slotProps={{
-          paper: {
-            variant: 'outlined',
-            elevation: 0,
-            sx: {
-              my: '4px',
-            },
-          },
-        }}
-        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-      >
-        <MenuItem selected={mode === 'system'} onClick={handleMode('system')}>
-          System
-        </MenuItem>
-        <MenuItem selected={mode === 'light'} onClick={handleMode('light')}>
-          Light
-        </MenuItem>
-        <MenuItem selected={mode === 'dark'} onClick={handleMode('dark')}>
-          Dark
-        </MenuItem>
-      </Menu>
-    </React.Fragment>
+    </Tooltip>
   );
 }
