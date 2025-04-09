@@ -149,7 +149,7 @@ export default function Hero() {
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          pt: { xs: 14, sm: 20 },
+          pt: { xs: 5, sm: 5 },
           pb: { xs: 8, sm: 12 },
           justifyContent: "center",
         }}
